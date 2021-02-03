@@ -12,7 +12,7 @@
 
             <?php include "../functions/panier.php" ?>
 
-            <div class="row">
+            <!--  <div class="row">
                 <div class="col-sm-6">article dans le panier</div>
                 <div class="col-sm-6">
                     <div class="container-fluid" style="padding: 0px;">
@@ -24,7 +24,7 @@
                         </div>
                     </div>              
                 </div>
-            </div><br>
+            </div><br> -->
 
         </div>
 
@@ -41,10 +41,10 @@
     </div>
 
     <script>
-        let progressBar = document.getElementsByClassName("bar");
-        let loadingBar = document.getElementsByClassName("loadingBar");
 
         function progressBarResize(){
+            let progressBar = document.getElementsByClassName("bar");
+            let loadingBar = document.getElementsByClassName("loadingBar");
             for(let i = 0; i < progressBar.length; i++){
                 let progress = progressBar[i].getAttribute("data-barProgress");
                 switch(progress){
@@ -60,12 +60,19 @@
                     case "4":
                         progressBar[i].style.right = "0px";
                         break;
+                    case 'default':
+                        progressBar[i].style.right = "0px";
+                        break;
                 }
             }
         }
 
         window.addEventListener('resize', () => {progressBarResize()})
-        document.addEventListener('DOMContentLoaded', () => {progressBarResize()})
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                progressBarResize()
+            }, 20);
+        })
         
     </script>
 

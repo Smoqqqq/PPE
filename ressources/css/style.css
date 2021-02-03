@@ -402,7 +402,7 @@ a.button:hover{
     top: 0px;
     left: 0;
     bottom: 0px;
-    right: 20px; /*20px full*/
+    right: 0px;
     background: url('../img/progressBar.png');
     background-position: left;
     background-repeat: repeat;

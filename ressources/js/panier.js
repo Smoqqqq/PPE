@@ -58,11 +58,11 @@ function getPanier(){
                         </small>
                     </div>
                     <div class="col-3">
-                        <select>
-                            <option>Bibliothèque :</option>
-                            <option>Bibliothèque Paris Nord</option>
-                            <option>Bibliothèque Orléans</option>
-                            <option>Bibliothèque Orsay</option>
+                        <select class="select">
+                            <option id="o` + i + `">Bibliothèque :</option>
+                            <option id="o` + i + `">Paris Nord</option>
+                            <option id="o` + i + `">Orléans</option>
+                            <option id="o` + i + `">Orsay</option>
                         </select>
                     </div>
                     <div class="col-1 text-right px-0">
