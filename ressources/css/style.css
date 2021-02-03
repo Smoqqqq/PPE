@@ -1,0 +1,428 @@
+:root{
+    --navbarBg: #363636;
+    --orange: #DC7633;
+    --boxShadow: 0px 0px 15px grey;
+}
+
+body{
+    background: var(--bodyBg);
+    overflow-x: hidden;
+}
+
+#footer{
+    background-color: var(--navbarBg);
+    color: white;
+    padding: 25px;
+    border-top: 2px solid var(--orange);
+    margin-top: 50px;
+}
+
+#navbar{
+    background-color: var(--navbarBg);
+    margin-bottom: 50px;
+    border-bottom: 2px solid var(--orange);
+    height: 76px;
+}
+
+.navspan{
+    display: grid;
+    place-items: center;
+    transition: 0.4s;
+    margin: 10px 0px 10px 0px;
+    padding: 0px;
+}
+
+.navspan.active a{
+    color: var(--orange);
+}
+
+a.nav{
+    color: white;
+    transition: 0.4s;
+    height: auto;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+a{
+    transition: 0.4s;
+}
+
+a:hover{
+    color: var(--orange);
+    text-decoration: none;
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+a.text-secondary:hover{
+    color: var(--orange) !important;
+    text-decoration: none;
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+a.nav
+{
+    position: relative;
+}
+
+a.nav:before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--orange);
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+a.nav:hover:before {
+    visibility: visible;
+    width: 100%;
+  }
+
+a.nav:hover{
+    color: var(--orange);
+    text-decoration: none;
+}
+
+#panier{
+    position: absolute;
+    right: 0px;
+}
+
+.divider{
+    height: 2px;
+    width: 100px;
+    background-color: var(--orange);
+    margin: 30px;
+}
+
+.smallDivider{
+    height: 2px;
+    width: 50px;
+    background-color: var(--orange);
+    margin: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.livre{
+    width: 200px;
+    height: 510px;
+    border-radius: 5px;
+    box-shadow: var(--boxShadow);
+    margin-top: 25px !important;
+    margin: auto;
+    background: white;
+    padding: 10px;
+    text-align: center;
+    overflow: hidden;
+    border: 2px solid white;
+    transition: 0.4s;
+}
+
+.livre small{
+    text-align: justify;
+}
+.livre:hover{
+    cursor: pointer;
+    transform: scale(1.05);
+    border: 2px solid var(--orange);
+}
+
+.titreLivre{
+    text-align: center;
+    padding-top: 10px;
+    text-transform: uppercase;
+}
+
+.imgLivre{
+    height: 220px;
+    margin: auto !important;
+}
+
+#itemPanier{
+    box-shadow: var(--boxShadow);
+    width: 100%;
+    text-align: center;
+    padding: 50px 5px 35px 5px;
+}
+
+#panierContainer{
+    margin-bottom: 50px;
+}
+
+.valider{
+    color: black;
+    background-color: var(--orange);
+    border: 1px solid var(--orange);
+    padding: 15px;
+    transition: 0.4s;
+    font-weight: 600;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.valider:hover{
+    background-color: white;
+    border: 1px solid var(--orange);
+    text-decoration: none;
+    color: black;
+}
+
+.articlePanier{
+    width: 90%;
+    margin: auto;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid white !important;
+}
+
+.articlePanier p{
+    margin: 10px;
+}
+
+#containerValider{
+    text-align: right !important;
+    margin: 55px;
+}
+
+.hover{
+    position: relative;
+}
+
+a.hover:before{
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #FFF;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+#login{
+    position: absolute;
+    right: 70px;
+}
+
+input{
+    outline: none;
+    border: 1px solid var(--orange);
+    width: 90%;
+    padding: 5px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+input.valider{
+    width: auto;
+}
+
+input:focus{
+    border: 1px solid var(--navbarBg);
+}
+
+.box{
+    box-shadow: var(--boxShadow);
+    width: 100%;
+    text-align: center;
+    padding: 15px;
+}
+
+#footer h3{
+    color: var(--orange)
+}
+
+.footernav{
+    padding: 0px; 
+    margin: 0px; 
+    text-align: left;
+}
+
+.footerNavA{
+    margin: 5px !important;
+    padding: 5px !important;
+}
+
+.erreur{
+    padding: 10px;
+    box-shadow: 0px 0px 15px #363636;
+    background: #FADBD8;
+    max-width: 350px;
+    margin: 15px;
+    border: 1px solid #E74C3C;
+    color: black;
+}
+
+.success{
+    padding: 10px;
+    box-shadow: 0px 0px 15px #363636;
+    background: #58D68D;
+    max-width: 350px;
+    margin: 15px;
+    border: 1px solid #1E8449;
+    color: white;
+}
+
+#connected{
+    position: absolute;
+    right: 80px;
+    padding: 15px;
+    color: white;
+}
+
+#connected p{
+    margin: 0px;
+}
+
+#connected a{
+    transition: 0.4s;
+    color: var(--orange);
+}
+
+#connected a:hover{
+    text-decoration: none;
+    opacity: 0.7;
+}
+
+.bg-gray{
+    background-color: #DADADA;
+    padding: 25px;
+}
+
+input[type='checkbox']{
+    margin: 5px;
+}
+
+input[type="file"]{
+    margin: auto;
+}
+
+.group-span-filestyle{
+    margin: auto;
+    background: var(--navbarBg);
+}
+
+.popover{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    max-width: 600px;
+}
+
+.articlePanier input{
+    margin: 0px;
+    padding: 0px;
+    border: 1px solid  #DADADA;
+    padding-left: 5px;
+    width: 35px;
+}
+
+.articlePanier label{
+    font-size: 14px;
+}
+
+#itemPanier:last-child .articlePanier{
+    margin-bottom: 0px;
+}
+
+.searchBar{
+    width: 460px;
+    position: relative;
+    top: 0px;
+    padding: 0px;
+}
+
+#search{
+    margin: 0px;
+    width: 100%;
+}
+
+a.button{
+    background-color: var(--navbarBg);
+    color: var(--orange);
+    padding: 8px 15px 8px 15px;   
+    transition: 0.4s;
+    position: relative;
+    top: 7px;
+}
+
+a.button:hover{
+    color: var(--navbarBg);
+    background-color: var(--orange);
+    cursor: pointer;
+    opacity: 1 !important;
+}
+
+.livre.hidden{
+    display: none;
+}
+
+@media (max-width: 575px){
+    #navbar{
+        height: 152px;
+    }
+}
+
+.loadingBar{
+    height: 20px;
+    border-radius: 25px;
+    background: white;
+    margin-right: -5px;
+}
+
+.loadingBar > .etape{
+    border-radius: 25px;
+    height: 30px;
+    width: 30px !important;
+    background: white;
+    z-index: 2;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: auto;
+    border: 2px solid var(--navbarBg);
+}
+.loadingBar > .etape:hover{
+    cursor: help;
+}
+
+.loadingBar > .bar{
+    height: 20px;
+    border-radius: 25px;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    bottom: 0px;
+    right: 20px; /*20px full*/
+    background: url('../img/progressBar.png');
+    background-position: left;
+    background-repeat: repeat;
+    animation: 5s roll infinite;
+}
+
+@keyframes roll{
+    0%{
+        background-position: left; 
+    }
+    25%{
+        background-position: center; 
+    }
+    50%{
+        background-position: right;
+    }
+    75%{
+        background-position: center;
+    }
+    100%{
+        background-position: left;
+    }
+}

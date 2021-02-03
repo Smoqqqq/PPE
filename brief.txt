@@ -1,0 +1,29 @@
+panier                                                  // FAIT
+consulter le catalogue                                  // FAIT
+historique de la navigation                             // FAIT
+faire des recherche de livre en particulier             // FAIT
+base de donnée a faire en SLAM !                        // FAIT
+
+-RETOUR DE LIVRES
+-3 SITES PHYSIQUES A PRENDRE EN COMPTE <select>?
+- ETAT DU LIVRE RESERVE
+- PARTIE PERSO (compte)
+
+APPLICATION WEB - CAR BDD
+
+TRAVAIL & REPARTITION
+
+- Alexis Morillon : BDD
+- Alexis Fredriksen : Page Bibliothèque 
+- Paul Le Flem : template & logique
+- Romain & Alexandre : Hébergement
+
+TEST :
+
+- Héberger sur une autre plateforme                     //FAIL
+
+cahier des charges:
+
+    quel est l'objectif du projets en quelque phrases
+    
+    performances à atteindre dans ce projet
