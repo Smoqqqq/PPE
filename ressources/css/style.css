@@ -1,5 +1,5 @@
 :root{
-    --navbarBg: #363636;
+    --navbarBg: #262626;
     --orange: #DC7633;
     --boxShadow: 0px 0px 15px grey;
 }
@@ -253,7 +253,7 @@ input:focus{
 
 .erreur{
     padding: 10px;
-    box-shadow: 0px 0px 15px #363636;
+    box-shadow: 0px 0px 15px var(--navbarBg);
     background: #FADBD8;
     max-width: 350px;
     margin: 15px;
@@ -263,7 +263,7 @@ input:focus{
 
 .success{
     padding: 10px;
-    box-shadow: 0px 0px 15px #363636;
+    box-shadow: 0px 0px 15px var(--navbarBg);
     background: #58D68D;
     max-width: 350px;
     margin: 15px;

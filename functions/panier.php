@@ -1,32 +1,19 @@
 <?php 
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbName = "users";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbName);
-
 $sql = "SELECT * FROM achats;";
 
 $result = mysqli_query($conn, $sql);
 
 //add
 
-$panier = explode('  ', $_COOKIE['panier']);
-$quantity = explode('  ', $_COOKIE['quantity']);
-$progress = explode('  ', $_COOKIE['progress']);
-
-echo '$panier : '.$panier[0];
-echo '<br>$quantity : '.$quantity[0];
-echo '<br>$progress : '.$progress[0];
+$panier = explode('  ', htmlspecialchars($_COOKIE['panier']));
+$quantity = explode('  ', htmlspecialchars($_COOKIE['quantity']));
+$progress = explode('  ', htmlspecialchars($_COOKIE['progress']));
 
 for($i = 0; $i < count($panier); $i++){
-
+    echo '<br> book : {'.$panier[$i].'} quantity : {'.$quantity[$i].'} progress : {'.$progress[$i].'}';
     $query_register = "INSERT INTO `achats` (`ID`, `title`, `progress`, `quantity`) VALUES (NULL, addslashes($panier[$i]), addslashes($progress[$i]), addslashes($quantity[$i]))";
     mysqli_query($conn, $query_register);
-
 }
 
 /* 
