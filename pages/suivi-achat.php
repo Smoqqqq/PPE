@@ -20,7 +20,7 @@
                             <div class="etape text-center" title="étape 1 : commande"><p>1</p></div>
                             <div class="etape text-center" title="étape 2 : livraison"><p>2</p></div>
                             <div class="etape text-center" title="étape 3 : retrait"><p>3</p></div>
-                            <div class="bar" data-barProgress="1"></div>
+                            <div class="bar" data-barProgress="3"></div>
                         </div>
                     </div>              
                 </div>
@@ -55,7 +55,7 @@
                         progressBar[i].style.right = String(loadingBar[i].getBoundingClientRect().width * 0.50 + "px");
                         break;
                     case "3":
-                        progressBar[i].style.right = String(loadingBar[i].getBoundingClientRect().width * 0.25 + "px");
+                        progressBar[i].style.right = String(loadingBar[i].getBoundingClientRect().width * 0.18 + "px");
                         break;
                     case "4":
                         progressBar[i].style.right = "0px";
