@@ -15,9 +15,12 @@ $result = mysqli_query($conn, $sql);
 //add
 
 $panier = explode('  ', $_COOKIE['panier']);
-$quantity = $_POST['quantity'];
+$quantity = explode('  ', $_COOKIE['quantity']);
 $progress = explode('  ', $_COOKIE['progress']);
 
+echo '$panier : '.$panier[0];
+echo '<br>$quantity : '.$quantity[0];
+echo '<br>$progress : '.$progress[0];
 
 for($i = 0; $i < count($panier); $i++){
 

@@ -69,7 +69,7 @@ function getPanier(){
                         <label for"quantity" class="text-secondary">Quantité :</label>
                     </div>
                     <div class="col-1 text-left px-2">
-                        <input name="quantity" type="number" min="1" max="9" value="1"></div>
+                        <input class="quantity" name="quantity" type="number" min="1" max="9" value="1"></div>
                     <div class="col-1 text-left">8.99€</div>
                 </div>`
                 document.getElementById("itemPanier").appendChild(article);
