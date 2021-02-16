@@ -2,10 +2,13 @@
     --navbarBg: #262626;
     --orange: #DC7633;
     --boxShadow: 0px 0px 15px grey;
+    --white: white;
+    --bggray: #DADADA;
+    --textColor: #262626;
 }
 
 body{
-    background: var(--bodyBg);
+    background: var(--white);
     overflow-x: hidden;
 }
 
@@ -55,13 +58,6 @@ a:hover{
     opacity: 0.7;
 }
 
-a.text-secondary:hover{
-    color: var(--orange) !important;
-    text-decoration: none;
-    cursor: pointer;
-    opacity: 0.7;
-}
-
 a.nav
 {
     position: relative;
@@ -85,7 +81,7 @@ a.nav:hover:before {
   }
 
 a.nav:hover{
-    color: var(--orange);
+    color: var(--orange) !important;
     text-decoration: none;
 }
 
@@ -117,11 +113,11 @@ a.nav:hover{
     box-shadow: var(--boxShadow);
     margin-top: 25px !important;
     margin: auto;
-    background: white;
+    background: var(--white);
     padding: 10px;
     text-align: center;
     overflow: hidden;
-    border: 2px solid white;
+    border: 2px solid var(--white);
     transition: 0.4s;
 }
 
@@ -157,7 +153,7 @@ a.nav:hover{
 }
 
 .valider{
-    color: black;
+    color: var(--textColor);
     background-color: var(--orange);
     border: 1px solid var(--orange);
     padding: 15px;
@@ -168,10 +164,10 @@ a.nav:hover{
 }
 
 .valider:hover{
-    background-color: white;
+    background-color: var(--white);
     border: 1px solid var(--orange);
     text-decoration: none;
-    color: black;
+    color: var(--textColor);;
 }
 
 .articlePanier{
@@ -179,7 +175,7 @@ a.nav:hover{
     margin: auto;
     padding: 15px;
     margin-bottom: 15px;
-    border: 1px solid white !important;
+    border: 1px solid var(--white);
 }
 
 .articlePanier p{
@@ -202,7 +198,7 @@ a.hover:before{
     height: 2px;
     bottom: 0;
     left: 0;
-    background-color: #FFF;
+    background-color: var(--white);
     visibility: hidden;
     transition: all 0.3s ease-in-out;
 }
@@ -251,7 +247,21 @@ input:focus{
     padding: 5px !important;
 }
 
+#nom{
+    color: white;
+}
+
+#footer p, a{
+    color: white !important;
+}
+
+#footer a:hover{
+    color: var(--orange) !important;
+}
+
 .erreur{
+    position:absolute;
+    top: 100px;
     padding: 10px;
     box-shadow: 0px 0px 15px var(--navbarBg);
     background: #FADBD8;
@@ -278,6 +288,14 @@ input:focus{
     color: white;
 }
 
+#connected a{
+    color: var(--orange) !important;
+}
+
+p, h1, h2, a{
+    color: var(--textColor);
+}
+
 #connected p{
     margin: 0px;
 }
@@ -293,7 +311,7 @@ input:focus{
 }
 
 .bg-gray{
-    background-color: #DADADA;
+    background-color: var(--bggray);
     padding: 25px;
 }
 
@@ -303,6 +321,10 @@ input[type='checkbox']{
 
 input[type="file"]{
     margin: auto;
+}
+
+div{
+    color: var(--textColor);
 }
 
 .group-span-filestyle{
@@ -316,12 +338,13 @@ input[type="file"]{
     left: 50%;
     transform: translateY(-50%) translateX(-50%);
     max-width: 600px;
+    background: var(--white);
 }
 
 .articlePanier input{
     margin: 0px;
     padding: 0px;
-    border: 1px solid  #DADADA;
+    border: 1px solid var(--bggray);
     padding-left: 5px;
     width: 35px;
 }
@@ -344,6 +367,7 @@ input[type="file"]{
 #search{
     margin: 0px;
     width: 100%;
+    background: var(--white);
 }
 
 a.button{
@@ -356,7 +380,7 @@ a.button{
 }
 
 a.button:hover{
-    color: var(--navbarBg);
+    color: var(--textColor);;
     background-color: var(--orange);
     cursor: pointer;
     opacity: 1 !important;
@@ -375,15 +399,16 @@ a.button:hover{
 .loadingBar{
     height: 20px;
     border-radius: 25px;
-    background: white;
+    background: var(--white);
     margin-right: -5px;
+    transform: translateY(15px);
 }
 
 .loadingBar > .etape{
     border-radius: 25px;
     height: 30px;
     width: 30px !important;
-    background: white;
+    background: var(--white);
     z-index: 2;
     position: relative;
     top: 50%;
@@ -406,23 +431,43 @@ a.button:hover{
     background: url('../img/progressBar.png');
     background-position: left;
     background-repeat: repeat;
-    animation: 5s roll infinite;
+    animation: 3s roll infinite ease-in-out;
+}
+
+.suiviAchat{
+    padding: 20px 10px 20px 10px;
+    background: var(--bggray);
+}
+
+.suiviAchat:hover{
+    filter: brightness(0.85);
+}
+
+.orange{
+    color: var(--orange) !important;
+}
+
+.closeInfos{
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: var(--textColor);;
+    font-size: 2em;
+}
+
+#infoPopup a{
+    color: var(--textColor) !important;
+}
+
+#infoPopup a:hover{
+    color: var(--orange) !important;
 }
 
 @keyframes roll{
     0%{
         background-position: left; 
     }
-    25%{
-        background-position: center; 
-    }
-    50%{
-        background-position: right;
-    }
-    75%{
-        background-position: center;
-    }
     100%{
-        background-position: left;
+        background-position: right;
     }
 }

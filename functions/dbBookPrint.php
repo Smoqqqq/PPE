@@ -47,7 +47,7 @@ function printFullDB($style){
             <br>
             <img src="<?php echo $cover[$i] ?>" alt="livre" class="imgLivre img-thumbnail">
             <br>
-            <small class="descSmall"><?php echo $desc[$i] ?></small>     
+            <small><?php echo $desc[$i] ?></small>     
         </div>
 
         <?php

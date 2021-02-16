@@ -27,6 +27,7 @@
 
 <script type="text/javascript" src="../ressources/js/bootstrap-filestyle.min.js"></script>
 <script type="text/javascript" src="../ressources/js/panier.js"></script>
+<script src="../ressources/js/darkmode.js"></script>
 
 </body>
 </html>

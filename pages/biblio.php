@@ -5,7 +5,7 @@
     
     <h1>Bibliothèque</h1>
 
-    <p>Par catégories <a href="livres" class="text-secondary" style="float: right; text-transform: uppercase;">Accéder à la bibliothèque complète <i class="fas fa-arrow-right"></i></a></p>
+    <p>Par catégories <a class="orange" href="livres" style="float: right; text-transform: uppercase;">Accéder à la bibliothèque complète <i class="fas fa-arrow-right"></i></a></p>
 
     <div class="divider"></div>
 
@@ -302,7 +302,7 @@
 
 <div class="container">
     <br>
-    <a href="livres" style="float: right; text-transform: uppercase;" class="text-secondary">Accéder à la bibliothèque complète <i class="fas fa-arrow-right"></i></a>
+    <a href="livres" class="orange" style="float: right; text-transform: uppercase;">Accéder à la bibliothèque complète <i class="fas fa-arrow-right"></i></a>
 </div>
 
 <script defer src="../ressources/js/search.js"></script>

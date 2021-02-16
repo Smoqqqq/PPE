@@ -36,6 +36,7 @@ if($submitbutton){
         if($success){
             echo "<div class='success'>Connecté !</div>";
             setcookie("name", $name);
+            setcookie("mdp", $pass);
         }else{
             echo "<div class='erreur'>Connection échoué !</div>";
         }

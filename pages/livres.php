@@ -2,10 +2,10 @@
 <?php include "../functions/dbBookPrint.php" ?>
 
 <div class="container">
-    
+
     <h1>Bibliothèque</h1>
 
-    <p>Complète <a href="biblio" class="text-secondary" style="float: right; text-transform: uppercase;">Accéder à la bibliothèque par catégories <i class="fas fa-arrow-right"></i></a></p>
+    <p>Complète <a href="biblio" class="orange" style="float: right; text-transform: uppercase;">Accéder à la bibliothèque par catégories <i class="fas fa-arrow-right"></i></a></p>
 
     <div class="divider"></div>
 
@@ -21,15 +21,15 @@
 
     <div class="meilleurVentes row">
 
-    <?php printFullDB("display: block") ?>
-        
+        <?php printFullDB("display: block") ?>
+
     </div>
 
 </div>
 
 <div class="container">
     <br>
-<a href="biblio" class="text-secondary" style="float: right; text-transform: uppercase;">Accéder à la bibliothèque par catégories <i class="fas fa-arrow-right"></i></a>
+    <a class="orange" href="biblio" style="float: right; text-transform: uppercase;">Accéder à la bibliothèque par catégories <i class="fas fa-arrow-right"></i></a>
 </div>
 
 <script defer src="../ressources/js/search.js"></script>

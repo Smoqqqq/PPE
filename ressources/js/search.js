@@ -42,16 +42,19 @@ function checkForEmptyArea(){
     }    
 }
 
-searchButton.addEventListener('click', () => {
-    selectBooksToPrint();
-    updateList();
-    checkForEmptyArea();
-})
-
-searchBar.addEventListener('keydown', (e) => {
-    if(e.code === "Enter"){
+document.addEventListener('DOMContentLoaded', () => {
+    searchButton.addEventListener('click', () => {
         selectBooksToPrint();
         updateList();
         checkForEmptyArea();
-    }
-})
+        console.log('clicked');
+    })
+    searchBar.addEventListener('keydown', (e) => {
+        if(e.code === "Enter"){
+            selectBooksToPrint();
+            updateList();
+            checkForEmptyArea();
+        }
+        console.log('pressed Enter');
+    })
+});

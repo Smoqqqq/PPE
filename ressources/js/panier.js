@@ -23,7 +23,7 @@ for(let i = 0; i < books.length; i++){
                         <img src="` + cover[i] + `"class="img-responsive" style="width: 50%; margin-bottom: 15px;">
                         <h5> - ` + title[i] +` </h5>
                         <br><h5><a href="" class="button" onclick="addBook(` + i + `)">Ajouter</a></h5>
-                        <br><a href="" class="text-secondary">Annuler</a>
+                        <br><a href="">Annuler</a>
                     </div>
                 </row>
             <div>`;
@@ -42,37 +42,77 @@ function addBook(i){
 }
 
 let panier = document.getElementById("panier");
+let removed = 0;
+
+
+function removeItem(item){
+    //remove item from cookie + add one to first iteration quantity
+    let panier = getCookieVal("panier").split('  ');
+    /* 
+    panier.splice(item.i, 1);
+    for(let i = 0; i < panier.length; i++){
+        document.cookie = "panier=" + panier[i] + '  ';
+    }
+    console.log(getCookieVal('panier')); 
+    */
+    removed++
+}
+ 
+let articles = getCookieVal("panier").split('  ');
+let mergedList = [];
 
 function getPanier(){
     if(window.location.href.includes("panier")){
         if(getCookieVal('panier')){
-            let articles = getCookieVal("panier").split('  ');
+            mergedList = [];
+            let merged = false;
+            articles = getCookieVal("panier").split('  ');
             for(let i = 0; i < articles.length; i++){
-                let article = document.createElement("div");
-                article.innerHTML = 
-                `<div class="row articlePanier border">
-                    <div class="col-4 text-left">` + articles[i] + `</div>
-                    <div class="col-2 text-right">
-                        <small>
-                            <a class="text-danger" onclick="deleteArticle(` + '`' + String(articles[i]) + '`' + `)">Supprimer</a>
-                        </small>
-                    </div>
-                    <div class="col-3">
-                        <select class="select">
-                            <option id="o` + i + `">Bibliothèque :</option>
-                            <option id="o` + i + `">Paris Nord</option>
-                            <option id="o` + i + `">Orléans</option>
-                            <option id="o` + i + `">Orsay</option>
-                        </select>
-                    </div>
-                    <div class="col-1 text-right px-0">
-                        <label for"quantity" class="text-secondary">Quantité :</label>
-                    </div>
-                    <div class="col-1 text-left px-2">
-                        <input class="quantity" name="quantity" type="number" min="1" max="9" value="1"></div>
-                    <div class="col-1 text-left">8.99€</div>
-                </div>`
-                document.getElementById("itemPanier").appendChild(article);
+                merged = false;
+                for(let x = 0; x < i; x++){
+                    /*
+                    if(articles[x] == articles[i]){
+                        merged = true;
+                        mergedList.push({
+                            x: x,
+                            i: i
+                        });
+                        console.log(mergedList)
+                        console.log('merged and added one to : "' + articles[x] +'"');
+                        let index = articles.indexOf(articles[x], 0);
+                        console.log('document.getElementsByClassName("quantity")[' + (index) + '].value++');
+                        document.getElementsByClassName('quantity')[index].value++;
+                        removeItem(mergedList[mergedList.length - 1]);
+                    }
+                    */
+                }
+                if(!merged){
+                    let article = document.createElement("div");
+                    article.innerHTML = 
+                    `<div class="row articlePanier border">
+                        <div class="col-4 text-left">` + articles[i] + `</div>
+                        <div class="col-2 text-right">
+                            <small>
+                                <a class="text-danger" onclick="deleteArticle(` + '`' + String(articles[i]) + '`' + `)">Supprimer</a>
+                            </small>
+                        </div>
+                        <div class="col-3">
+                            <select class="select">
+                                <option id="o` + i + `">Bibliothèque :</option>
+                                <option id="o` + i + `">Paris Nord</option>
+                                <option id="o` + i + `">Orléans</option>
+                                <option id="o` + i + `">Orsay</option>
+                            </select>
+                        </div>
+                        <div class="col-1 text-right px-0">
+                            <label for"quantity">Quantité :</label>
+                        </div>
+                        <div class="col-1 text-left px-2">
+                            <input class="quantity" name="quantity" type="number" min="1" max="9" value="1"></div>
+                        <div class="col-1 text-left">8.99€</div>
+                    </div>`
+                    document.getElementById("itemPanier").appendChild(article);
+                }
             }
         }else{
             let p = document.createElement('p');
@@ -240,9 +280,9 @@ function disabledHistory(){
                         <p>L'historique est désactivé, souhaitez vous le réactiver ?</p>
                     </div>
                     <div class="col-4">
-                        <a href="" class="text-secondary" onclick="document.cookie='historic='">réactiver l'historique</a> 
+                        <a href="" onclick="document.cookie='historic='">réactiver l'historique</a> 
                         <br><br>
-                        <a href="" class="text-secondary">Annuler</a>
+                        <a href="">Annuler</a>
                     </div>
                 </row>
             <div>`;
@@ -255,9 +295,9 @@ function disabledHistory(){
                         <small class="text-danger">Cela aura pour action de supprimer votre historique</small>
                     </div>
                     <div class="col-4">
-                        <a href="" class="text-secondary" onclick="document.cookie='historic=disabled'">Désactiver l'historique</a> 
+                        <a href="" onclick="document.cookie='historic=disabled'">Désactiver l'historique</a> 
                         <br><br>
-                        <a href="" class="text-secondary">Annuler</a>
+                        <a href="">Annuler</a>
                     </div>
                 </row>
             <div>`;

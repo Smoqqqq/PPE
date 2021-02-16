@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-md-3">
             <h3 class="my-3 text-center">Bibliothèque</h3>
-            <p class="text-center">Les livres de la bibliothèque viennent du site <a class="text-secondary" style="font-size: 20px" href="https://bibliotheques.paris.fr/">bibliotheques.paris.fr <i class="fas fa-arrow-right"></i></a></p>
+            <p class="text-center">Les livres de la bibliothèque viennent du site <a style="font-size: 20px" href="https://bibliotheques.paris.fr/">bibliotheques.paris.fr <i class="fas fa-arrow-right"></i></a></p>
         </div>
         <div class="col-md-3" style="border-left: 1px solid var(--orange)">
             <h3 class="my-3 text-center">PPE</h3>

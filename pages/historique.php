@@ -7,7 +7,7 @@
         <div class="col-sm-3" id="menu">
             <h1>Historique</h1>
             <div class="divider"></div>
-            <a class="paramMenu text-secondary" onclick="disabledHistory()" id="toggleHistory"></a>
+            <a class="paramMenu" onclick="disabledHistory()" id="toggleHistory"></a>
         </div> 
         <div class="col-sm-7">
             <div id="history">

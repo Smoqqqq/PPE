@@ -2,7 +2,56 @@ let url, loggedIn, name;
 
 function showPersonalInfo(){
     document.getElementById("connected").style.display = "block";
-    document.getElementById("nom").innerHTML = "Connecté en tant que : " + getCookieVal("name");
+    document.getElementById("nom").innerHTML = "Connecté en tant que : <a onclick='personnalPage()'>" + getCookieVal("name") + "</a>";
+}
+
+function hideInfos(){
+    document.getElementById("infoPopup").remove()
+}
+
+function showPassword(){
+    document.getElementById('mdp').innerHTML = getCookieVal('mdp');
+}
+
+function hidePassword(){
+    document.getElementById('mdp').innerHTML = '••••••';
+}
+
+function personnalPage(){
+    let historyState = getCookieVal('historic') == 'disabled' ? "désactivé" : "activé";
+    let div = document.createElement("div");
+    div.classList.add("popover");
+    div.classList.add("box");
+    div.id = "infoPopup";
+    div.innerHTML = `
+        <div class="text-left">
+
+            <h2 class="text-center">Informations personnelles</h2>
+
+            <br>
+
+            <p>Nom d'utilisateur : <e style="color: var(--orange)">` + getCookieVal('name') + `</e></p>
+
+            <p>Mot de passe : <e id="mdp" title="cliquez pour révéler">••••••</e></p>
+
+            <p><a href="historique"><i class="fas fa-external-link-alt"></i> Historique : </a><e id="histo"> ` + historyState + ` </e></p>
+            <p>Mode Sombre : <a id="dmToggle">` + getCookieVal('darkMode') + `</a></p>
+
+            <a onclick="hideInfos()" class="closeInfos"><i class="far fa-times-circle"></i></a>
+
+        </div>
+    `;
+    document.querySelector('body').appendChild(div);
+
+    document.getElementById('mdp').addEventListener('click', () => {
+        showPassword();
+    });
+    document.getElementById('mdp').addEventListener('mouseout', () => {
+        hidePassword();
+    });
+    document.getElementById('dmToggle').addEventListener('click', () => {
+        toggleDM();
+    })
 }
 
 function hidePersonnalInfo(){

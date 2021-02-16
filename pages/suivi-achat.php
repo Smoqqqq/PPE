@@ -8,7 +8,7 @@
 
         <div class="divider"></div>
 
-        <div class="bg-gray">
+        <div class="bg-gray" id="suiviAchat">
 
             <?php include "../functions/panier.php" ?>
 
@@ -49,7 +49,7 @@
                 let progress = progressBar[i].getAttribute("data-barProgress");
                 switch(progress){
                     case "1":
-                        progressBar[i].style.right = String(loadingBar[i].getBoundingClientRect().width * 0.86 + "px");
+                        progressBar[i].style.right = String(loadingBar[i].getBoundingClientRect().width * 0.84 + "px");
                         break;
                     case "2":
                         progressBar[i].style.right = String(loadingBar[i].getBoundingClientRect().width * 0.50 + "px");
