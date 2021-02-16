@@ -1,8 +1,10 @@
-panier                                                  // FAIT
-consulter le catalogue                                  // FAIT
-historique de la navigation                             // FAIT
-faire des recherche de livre en particulier             // FAIT
-base de donnée a faire en SLAM !                        // FAIT
+panier                                                                          // FAIT
+consulter le catalogue                                                          // FAIT
+historique de la navigation                                                     // FAIT
+faire des recherche de livre en particulier                                     // à moitié fait, marche pas sur livre
+base de donnée a faire en SLAM !                                                // FAIT
+Suivi panier                                                                    // à moitié fait, scripts bancal
+Prise en compte des 3 sites                                                     // FAIT
 
 -RETOUR DE LIVRES
 -3 SITES PHYSIQUES A PRENDRE EN COMPTE <select>?
@@ -18,9 +20,11 @@ TRAVAIL & REPARTITION
 - Paul Le Flem : template & logique
 - Romain & Alexandre : Hébergement
 
+Hébergement sur 000webhostapp ne fonctionne pas, on teste autre part :
+
 TEST :
 
-- Héberger sur une autre plateforme                     //FAIL
+- Héberger sur d'autres plateformes                                             // FAIL
 
 cahier des charges:
 
@@ -64,7 +68,6 @@ cahier des charges:
 
 
 
-    RIEN A VOIR !
 
 
 
@@ -87,12 +90,106 @@ cahier des charges:
 
 
 
-    Mail jeans :
 
 
-    Coucou, ducoup voila les jeans :
 
-    https://www2.hm.com/fr_fr/productpage.0720504010.html en taille 31/32 (bleu denim) parce qu'il à l'air serré 
-    https://www2.hm.com/fr_fr/productpage.0751994024.html en taille 30/32 (denim noir)
 
-    Merci 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**************************************************************************************************************************************************************/
+
+RIEN A VOIR !
+
+/**************************************************************************************************************************************************************/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Mail jeans :
+
+
+Coucou, ducoup voila les jeans :
+
+https://www2.hm.com/fr_fr/productpage.0720504010.html en taille 31/32 (bleu denim) parce qu'il à l'air serré 
+https://www2.hm.com/fr_fr/productpage.0751994024.html en taille 30/32 (denim noir)
+
+Merci 
