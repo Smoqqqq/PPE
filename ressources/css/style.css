@@ -387,7 +387,7 @@ a.button:hover{
 }
 
 .livre.hidden{
-    display: none;
+    display: none !important;
 }
 
 @media (max-width: 575px){
