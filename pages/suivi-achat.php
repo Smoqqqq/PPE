@@ -12,29 +12,7 @@
 
             <?php include "../functions/panier.php" ?>
 
-            <!--  <div class="row">
-                <div class="col-sm-6">article dans le panier</div>
-                <div class="col-sm-6">
-                    <div class="container-fluid" style="padding: 0px;">
-                        <div class="row loadingBar">
-                            <div class="etape text-center" title="étape 1 : commande"><p>1</p></div>
-                            <div class="etape text-center" title="étape 2 : livraison"><p>2</p></div>
-                            <div class="etape text-center" title="étape 3 : retrait"><p>3</p></div>
-                            <div class="bar" data-barProgress="3"></div>
-                        </div>
-                    </div>              
-                </div>
-            </div><br> -->
-
         </div>
-
-        <!--
-        <div id="containerValider">
-
-            <a href="" class="valider" id="validerPanier">Valider votre panier</a>
-
-        </div>
-        -->
 
         <br><br>
 
@@ -72,6 +50,11 @@
             setTimeout(() => {
                 progressBarResize()
             }, 20);
+            let images = document.getElementsByClassName('bookImg');
+            let achats = document.getElementsByClassName('suivitAchats')
+            for(let i = 0; i < images.length; i++){
+
+            }
         })
         
     </script>

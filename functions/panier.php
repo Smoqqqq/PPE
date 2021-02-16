@@ -30,6 +30,7 @@ for($i = 0; $i < count($panier); $i++){
                     </div>
                 </div>              
             </div>
+            <img src="" class="bookImg" style="display: none;">
         </div>'; 
     /* $query_register = "INSERT INTO `achats` (`ID`, `title`, `progress`, `quantity`) VALUES (NULL, 'addslashes($panier[$i])', 'addslashes($progress[$i])', 'addslashes($quantity[$i])')";
     mysqli_query($conn, $query_register); */
