@@ -5,7 +5,7 @@
 
     let navPages = ["index", "biblio", "login", "panier"];
     let pages = ["index", "biblio", "login", "panier", "admin_addBooks", "livres", "historique", "suivi-achat"];
-    let pageTitle = ["Accueil", "Bibliothèque", "S'enregistrer", "panier", "Ajouter des livres", "Bibliothèque complète", "Historique", "suivi-panier"];
+    let pageTitle = ["Accueil", "Bibliothèque", "S'enregistrer", "panier", "Ajouter des livres", "Bibliothèque complète", "Historique", "suivre mon achat"];
     let span = document.getElementsByClassName("navspan");
 
     window.addEventListener("DOMContentLoaded", () => {
