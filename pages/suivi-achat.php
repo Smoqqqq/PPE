@@ -51,9 +51,19 @@
                 progressBarResize()
             }, 20);
             let images = document.getElementsByClassName('bookImg');
-            let achats = document.getElementsByClassName('suivitAchats')
+            let achats = document.getElementsByClassName('suiviAchat');
+            let left = [];
             for(let i = 0; i < images.length; i++){
-
+                achats[i].addEventListener('mouseover', () => {
+                    left[i] = false;
+                    setTimeout(() => {
+                        if(left[i]) return;
+                        images[i].style.display = "block";
+                    }, 1500);
+                });
+                achats[i].addEventListener('mouseout', () => {
+                    left[i] = true;
+                });
             }
         })
         

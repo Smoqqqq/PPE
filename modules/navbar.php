@@ -9,7 +9,14 @@
         <div class="col-sm-6">
             <div class="row">
                 <span class="navspan" id="login"><a href="../pages/login" class="nav">Se connecter / s'inscrire</a></span>
-                <span class="navspan" id="panier"><a class="nav" href="../pages/panier">Panier</a></span>
+                <span class="navspan" id="panier"><a class="nav" href="
+                <?php if(!isset($_COOKIE['progress']) || $_COOKIE['progress'] == '') {
+                    echo '../pages/panier';
+                } else {
+                    echo '../pages/suivi-achat';    
+                }
+                ?>
+                ">Panier</a></span>
 
                 <div id="connected" class="row">
                     <p id="nom"></p>

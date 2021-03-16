@@ -2,7 +2,7 @@ let url, loggedIn, name;
 
 function showPersonalInfo(){
     document.getElementById("connected").style.display = "block";
-    document.getElementById("nom").innerHTML = "Connecté en tant que : <a onclick='personnalPage()'>" + getCookieVal("name") + "</a>";
+    document.getElementById("nom").innerHTML = "Connecté en tant que : <a onclick='personnalPage()' title='Informations personnelles'>" + getCookieVal("name") + "</a>";
 }
 
 function hideInfos(){
@@ -36,6 +36,8 @@ function personnalPage(){
 
             <p><a href="historique"><i class="fas fa-external-link-alt"></i> Historique : </a><e id="histo"> ` + historyState + ` </e></p>
             <p>Mode Sombre : <a id="dmToggle">` + getCookieVal('darkMode') + `</a></p>
+
+            <a href="" onclick="disconnect()">Déconnexion</a>
 
             <a onclick="hideInfos()" class="closeInfos"><i class="far fa-times-circle"></i></a>
 
