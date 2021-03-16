@@ -5,6 +5,11 @@ $quantity = explode('  ', htmlspecialchars($_COOKIE['quantity']));
 $progress = explode('  ', htmlspecialchars($_COOKIE['progress']));
 $city = explode('  ', htmlspecialchars($_COOKIE['city']));
 
+if(isset($_COOKIE['dates'])){
+    echo $_COOKIE['dates'].'<br>';
+    echo date('d/m/Y');
+}
+ 
 for($i = 0; $i < count($panier); $i++){
     $timeLeft[$i] = 4 - $progress[$i];
     $style = (($i % 2) != 0) ? 'style="background: #CCCCCC"' : "";
