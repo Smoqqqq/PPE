@@ -5,14 +5,27 @@ $quantity = explode('  ', htmlspecialchars($_COOKIE['quantity']));
 $progress = explode('  ', htmlspecialchars($_COOKIE['progress']));
 $city = explode('  ', htmlspecialchars($_COOKIE['city']));
 
-if(isset($_COOKIE['dates'])){
-    echo $_COOKIE['dates'].'<br>';
-    echo date('d/m/Y');
+if(isset($_COOKIE['buyDates'])){
+    //echo $_COOKIE['buyDates'].'<br>';
+    $date = date("H:i");
+    $hours = strval(intval($date) + 1).'h';
+    $minSec = explode(':', $date);
+    $minSec = $minSec[1];
+    $date = date('d/m/Y').', '.$hours.$minSec;
+    //echo $date;
+    $dateCookie = explode('  ', $_COOKIE['buyDates']);
+    for($i = 0; $i < count($dateCookie); $i++){
+        $cookie = explode(':', explode(' ', $dateCookie[$i])[1])[0];
+        if(strval(intval($date) + 1) - $cookie > 1){
+            //echo '<br>'.strval(intval($date) + 1 - $cookie);
+            $progress[$i] = $progress[$i] + 1;
+        }
+    }
 }
  
 for($i = 0; $i < count($panier); $i++){
     $timeLeft[$i] = 4 - $progress[$i];
-    $style = (($i % 2) != 0) ? 'style="background: #CCCCCC"' : "";
+    $style = (($i % 2) != 0) ? 'style="background: rgba(0, 0, 0, 0.5)"' : "";
     echo 
         '<div class="row suiviAchat"'.$style.'>
             <div class="col-sm-8">

@@ -268,6 +268,7 @@ function deleteArticle(item){
     let panier = getCookieVal("panier");
     newPanier = panier.replace(item, '');
     document.cookie = String("panier=" + newPanier); 
+    
     location.reload();
 }
 
