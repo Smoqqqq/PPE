@@ -1,7 +1,6 @@
 <?php
 if (isset($_COOKIE['progress'])) {
     if($_COOKIE['city'] != '' && $_COOKIE['city'] != 'undefined'){
-        die($_COOKIE['city']);
         header('Location: suivi-achat', 301);
     }
 }

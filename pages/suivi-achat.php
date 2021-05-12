@@ -58,8 +58,8 @@
         let achats = document.getElementsByClassName('suiviAchat');
         let left = [];
         for (let i = 0; i < images.length; i++) {
-            for(let y = 0; y < livres.length; i++){
-                if(livresAchete[i].innerText == livres[y].innerText){
+            for (let y = 0; y < livres.length; i++) {
+                if (livresAchete[i].innerText == livres[y].innerText) {
                     let src = bookImg[y].getAttribute('src');
                     images[i].setAttribute('src', src);
                 }
@@ -76,6 +76,29 @@
             });
         }
     })
+</script>
+
+<div class="text-center"><a href="suite-achat" class="valider" id="confirm" onclick="clearCookies()">j'ai réceptionné le colis !</a></div>
+
+<script>
+    let confirm = document.getElementById('confirm');
+    if (document.getElementsByClassName('received').length > 0) {
+        confirm.style.display = "block";
+    }
+
+    function clearCookies() {
+        document.cookie = "newpanier=" + getCookieVal("panier");
+        document.cookie = "newbuyDates=" + getCookieVal("buyDates");
+        document.cookie = "newquantity=" + getCookieVal("quantity");
+        document.cookie = "newcity=" + getCookieVal("city");
+        document.cookie = "deliveryDate=" + '<?php echo date("d/m/Y"); ?>';
+
+        document.cookie = "panier=;";
+        document.cookie = "buyDates=;";
+        document.cookie = "quantity=;";
+        document.cookie = "progress=;";
+        document.cookie = "city=;";
+    }
 </script>
 
 <?php include "../modules/endBlock.php" ?>
