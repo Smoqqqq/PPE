@@ -8,20 +8,25 @@
             <h3 class="my-3 text-center">PPE</h3>
             <p class="text-center">Cette Bibliothèque est un projet de PPE</p>
         </div>
-        <div class="col-md-6" style="border-left: 1px solid var(--orange)">       
+        <div class="col-md-6" style="border-left: 1px solid var(--orange)">
             <h3 class="my-3 text-center">Liens utiles</h3>
-            <div class="row">         
+            <div class="row">
                 <div class="col-4">
                     <p class="navspan footernav"><a href="../pages/login" class="nav footerNavA">Connexion<a></p>
-                    <p class="navspan footernav"><a href="../pages/index" class="nav footerNavA">Accueil<a></p>  
+                    <p class="navspan footernav"><a href="../pages/index" class="nav footerNavA">Accueil<a></p>
                 </div>
                 <div class="col-4">
                     <p class="navspan footernav"><a href="../pages/biblio" class="nav footerNavA">Bibliothèque par catégories</a></p>
                     <p class="navspan footernav"><a href="../pages/livres" class="nav footerNavA">Bibliothèque complète</a></p>
                 </div>
                 <div class="col-4">
-                    <p class="navspan footernav"><a href="../pages/historique" class="nav footerNavA">Historique<a></p>  
-                    <p class="navspan footernav"><a href="../pages/panier" class="nav footerNavA">Panier<a></p>  
+                    <p class="navspan footernav"><a href="../pages/historique" class="nav footerNavA">Historique<a></p>
+                    <p class="navspan footernav"><a class="nav footerNavA" href="<?php if (!isset($_COOKIE['progress']) || $_COOKIE['progress'] == '' || $_COOKIE['city'] == "" || $_COOKIE['city'] == "undefined") {
+                                                                                    echo '../pages/panier';
+                                                                                } else {
+                                                                                    echo '../pages/suivi-achat';
+                                                                                }
+                                                                                ?> ">Panier</a></p>  
                 </div>
             </div>
         </div>    

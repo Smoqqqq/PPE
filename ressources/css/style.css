@@ -16,7 +16,7 @@ body{
 
 #footer{
     background-color: var(--navbarBg);
-    color: white;
+    color: var(--white);
     padding: 25px;
     border-top: 2px solid var(--orange);
     margin-top: 50px;
@@ -47,7 +47,7 @@ body{
 }
 
 a.nav{
-    color: white;
+    color: var(--white);
     transition: 0.4s;
     height: auto;
     padding: 15px;
@@ -258,7 +258,7 @@ input:focus{
     color: white;
 }
 
-#footer p, a{
+#footer p, #footer a{
     color: white !important;
 }
 

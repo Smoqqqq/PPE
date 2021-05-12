@@ -10,7 +10,7 @@
             <div class="row">
                 <span class="navspan" id="login"><a href="../pages/login" class="nav">Se connecter / s'inscrire</a></span>
                 <span class="navspan" id="panier"><a class="nav" href="
-                <?php if(!isset($_COOKIE['progress']) || $_COOKIE['progress'] == '') {
+                <?php if(!isset($_COOKIE['progress']) || $_COOKIE['progress'] == '' || $_COOKIE['city'] == "" || $_COOKIE['city'] == "undefined") {
                     echo '../pages/panier';
                 } else {
                     echo '../pages/suivi-achat';    

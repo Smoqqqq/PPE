@@ -18,37 +18,35 @@ if($resultCheck > 0){
 
 //$row = mysqli_fetch_assoc($result);
 
-$name = $_POST['username'];
-$pass = $_POST['password'];
-$submitbutton = $_POST['submitbutton'];
 $success = false;
 
-if($submitbutton){
-    if(!empty($name) && !empty($pass)){
-        while($row = mysqli_fetch_assoc($result)){
-            if($name == $row['User'] && $pass == $row['Pass']){
+if (isset($_POST['submitbutton'])) {
+    $name = $_POST['username'];
+    $pass = $_POST['password'];
+    $submitbutton = $_POST['submitbutton'];
+    if (!empty($name) && !empty($pass)) {
+        while ($row = mysqli_fetch_assoc($result)) {
+            if ($name == $row['User'] && $pass == $row['Pass']) {
                 $success = true;
                 $hasLoggedIn = "true";
-                $loggedInLocation = $_SERVER['REQUEST_URI']."?loggedin"."?*name=".$name;
+                $loggedInLocation = $_SERVER['REQUEST_URI'] . "?loggedin" . "?*name=" . $name;
                 header("Location: $loggedInLocation");
             }
         }
-        if($success){
+        if ($success) {
             echo "<div class='success'>Connecté !</div>";
             setcookie("name", $name);
             setcookie("mdp", $pass);
-        }else{
+        } else {
             echo "<div class='erreur'>Connection échoué !</div>";
         }
-    }else if(empty($name) && empty($pass)){
+    } else if (empty($name) && empty($pass)) {
         echo "<div class='erreur'>le <b>nom d'utilisateur</b> et le <b>mot de passe</b> sont obligatoire</div>";
-    }else if(empty($name)){
+    } else if (empty($name)) {
         echo "<div class='erreur'>le <b>nom d'utilisateur</b> est obligatoire</div>";
-    }else if(empty($pass)){
+    } else if (empty($pass)) {
         echo "<div class='erreur'>le <b>mot de passe</b> est obligatoire</div>";
-    }else{
+    } else {
         echo "Une erreur c'est produite";
     }
 }
-
-?>

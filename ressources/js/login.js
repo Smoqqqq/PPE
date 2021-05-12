@@ -23,6 +23,7 @@ function personnalPage() {
 	div.classList.add("popover");
 	div.classList.add("box");
 	div.id = "infoPopup";
+    let dmValue = getCookieVal("darkmode") || 'off';
 	div.innerHTML =
 		`
         <div class="text-left row">
@@ -34,7 +35,7 @@ function personnalPage() {
                 <a href="" onclick="disconnect()">Déconnexion</a>
             </div>
             <div class="col-sm-6">      
-                <p>Mode Sombre : <a id="dmToggle">` + getCookieVal("darkMode") + `</a></p>
+                <p>Mode Sombre : <a id="dmToggle">` + dmValue + `</a></p>
                 <p><a href="historique"><i class="fas fa-external-link-alt"></i> Historique : </a><e id="histo"> ` + historyState +	` </e></p>
                 <p><a href="panier"><i class="fas fa-external-link-alt"></i> Mes achats </a><e id="histo"></e></p>
             </div>

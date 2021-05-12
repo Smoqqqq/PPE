@@ -30,7 +30,7 @@ for($i = 0; $i < count($panier); $i++){
         '<div class="row suiviAchat"'.$style.'>
             <div class="col-sm-8">
                 <div class="row">
-                    <div class="col-sm-8"><i class="fas fa-book"></i> ' . $panier[$i] . '</div>
+                    <div class="col-sm-8 title"><i class="fas fa-book"></i> ' . $panier[$i] . '</div>
                     <div class="col-sm-4"><i class="fas fa-layer-group"></i> Quantité : '.$quantity[$i].'</div>
                 </div>   
                 <div class="row">

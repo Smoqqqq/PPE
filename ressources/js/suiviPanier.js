@@ -7,12 +7,13 @@ let options = [];
 let failled = false;
 let error = document.createElement('div');
 error.classList.add('erreur');
-error.innerHTML = "Le champ 'Site' est Obligatoire !";
+error.innerHTML = "Le champ 'Site' est obligatoire !";
 
 function getSelectValue(index){
     for(let i = 1; i < 4; i++){
         options[i] = document.querySelectorAll('option')[i].value;
     }
+    if(options[select[index].selectedIndex] == undefined) return "";
     return options[select[index].selectedIndex];
 }
 
@@ -29,7 +30,7 @@ function validerPanier(){
         document.cookie = 'city=' + getCookieVal('city') + '  ' + getSelectValue(i) + '  ';
         let date = new Date();
         document.cookie = 'buyDates=' + date.toLocaleString();
-        if(getSelectValue(i) == undefined){
+        if(getSelectValue(i) == undefined || getSelectValue(i) == ""){
             document.body.appendChild(error);
             select[i].style.border = "2px solid red";
             failled = true;

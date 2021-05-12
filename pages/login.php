@@ -44,9 +44,9 @@
 
                     <div class="smallDivider"></div>
 
-                    <input type="text" name="username" value="<?php echo $name; ?>" placeholder="Nom d'utilisateur">
+                    <input type="text" name="username" value="" placeholder="Nom d'utilisateur">
 
-                    <input type="password" name="password" value="<?php echo $pass; ?>" placeholder="Mot de passe">
+                    <input type="password" name="password" value="" placeholder="Mot de passe">
 
                     <br>
 

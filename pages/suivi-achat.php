@@ -52,9 +52,18 @@
             progressBarResize()
         }, 20);
         let images = document.getElementsByClassName('bookImg');
+        let bookImg = document.getElementsByClassName('imgLivre');
+        let livresAchete = document.getElementsByClassName('title');
+        let livres = document.getElementsByClassName('titrelivre');
         let achats = document.getElementsByClassName('suiviAchat');
         let left = [];
         for (let i = 0; i < images.length; i++) {
+            for(let y = 0; y < livres.length; i++){
+                if(livresAchete[i].innerText == livres[y].innerText){
+                    let src = bookImg[y].getAttribute('src');
+                    images[i].setAttribute('src', src);
+                }
+            }
             achats[i].addEventListener('mouseover', () => {
                 left[i] = false;
                 setTimeout(() => {

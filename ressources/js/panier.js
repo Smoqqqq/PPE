@@ -23,7 +23,7 @@ for(let i = 0; i < books.length; i++){
                         <img src="` + cover[i] + `"class="img-responsive" style="width: 50%; margin-bottom: 15px;">
                         <h5> - ` + title[i] +` </h5>
                         <br><h5><a href="" class="button" onclick="addBook(` + i + `)">Ajouter</a></h5>
-                        <br><a href="">Annuler</a>
+                        <br><a style="color: #DC7633" href="">Annuler</a>
                     </div>
                 </row>
             <div>`;

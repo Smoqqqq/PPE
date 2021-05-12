@@ -1,7 +1,9 @@
 <?php
-if (!isset($_COOKIE['progress']) || $_COOKIE['progress'] == '') {
-} else {
-    header('Location: suivi-achat', 301);
+if (isset($_COOKIE['progress']) || $_COOKIE['progress'] != '') {
+    if($_COOKIE['city'] != '' && $_COOKIE['city'] != 'undefined'){
+        die($_COOKIE['city']);
+        header('Location: suivi-achat', 301);
+    }
 }
 
 ?>
