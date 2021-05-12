@@ -7,6 +7,8 @@
         <div class="col-md-3" style="border-left: 1px solid var(--orange)">
             <h3 class="my-3 text-center">PPE</h3>
             <p class="text-center">Cette Bibliothèque est un projet de PPE</p>
+            <p class="text-center"><b>Auteurs :</b></p>
+            <p class="text-center">Paul Le Flem | Alexis Fredriksen</p>
         </div>
         <div class="col-md-6" style="border-left: 1px solid var(--orange)">
             <h3 class="my-3 text-center">Liens utiles</h3>
