@@ -29,7 +29,9 @@ if (isset($_COOKIE['progress'])) {
             <div class="col-1">Prix :</div>
         </div>
 
-    </div>
+    </div><br><br>
+
+    <p class="text-center">Vous pouvez aussi consulter l'historique de vos achats <a href="historique">ICI&nbsp;<i class="fas fa-external-link-alt"></i></a></p>
 
     <div id="containerValider">
 

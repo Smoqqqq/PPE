@@ -7,7 +7,8 @@
         <div class="col-sm-3" id="menu">
             <h1>Historique</h1>
             <div class="divider"></div>
-            <a class="paramMenu" onclick="disabledHistory()" id="toggleHistory"></a>
+            <a href="#purchases" class="paramMenu" id="toggleHistory">Historique des achats</a><br><br>
+            <a class="paramMenu text-danger" onclick="disabledHistory()" id="toggleHistory">Désactiver l'historique</a>
         </div>
         <div class="col-sm-9">
             <div id="history">
@@ -36,30 +37,32 @@
                     <h2>Historique des achats</h2>
                     <div class="divider"></div>
                     <?php
-                    $panier = explode('  ', htmlspecialchars($_COOKIE['newpanier']));
-                    $quantity = explode('  ', htmlspecialchars($_COOKIE['newquantity']));
-                    $city = explode('  ', htmlspecialchars($_COOKIE['newcity']));
-                    $dateCookie = explode('  ', $_COOKIE['newbuyDates']);
-                    $delivery = explode('  ', htmlspecialchars($_COOKIE['deliveryDate']));
+                    if (isset($_COOKIE['newpanier'])) {
+                        $panier = explode('  ', htmlspecialchars($_COOKIE['newpanier']));
+                        $quantity = explode('  ', htmlspecialchars($_COOKIE['newquantity']));
+                        $city = explode('  ', htmlspecialchars($_COOKIE['newcity']));
+                        $dateCookie = explode('  ', $_COOKIE['newbuyDates']);
+                        $delivery = explode('  ', htmlspecialchars($_COOKIE['deliveryDate']));
 
-                    for ($i = 0; $i < count($panier); $i++) {
-                        echo
-                        '<div class="row suiviAchat">
-                            <div class="col-sm-12">
-                                <div class="row">
-                                    <div class="col-sm-6 title"><i class="fas fa-book"></i> ' . $panier[$i] . '</div>
-                                    <div class="col-sm-6"><i class="fas fa-layer-group"></i> Quantité : ' . $quantity[$i] . '</div>
-                                </div>   
-                                <div class="row">
-                                    <div class="col-sm-6"><i class="fas fa-shipping-fast"></i> Livré le : ' . $delivery[$i] . '</div>
-                                    <div class="col-sm-6"><i class="fas fa-map-marker"></i> Site : ' . $city[$i] . '</div>
-                                </div>    
-                                <div class="row">
-                                    <div class="col-sm-6"><i class="fas fa-history"></i> Commande passé le : ' . $dateCookie[$i] . '</div>
-                                    <div class="col-sm-6"><i class="fas fa-tags"></i> Prix payé : 8.99€</div>
-                                </div>      
-                            </div>
-                        </div>';
+                        for ($i = 0; $i < count($panier); $i++) {
+                            echo
+                            '<div class="row suiviAchat">
+                                <div class="col-sm-12">
+                                    <div class="row">
+                                        <div class="col-sm-6 title"><i class="fas fa-book"></i> ' . $panier[$i] . '</div>
+                                        <div class="col-sm-6"><i class="fas fa-layer-group"></i> Quantité : ' . $quantity[$i] . '</div>
+                                    </div>   
+                                    <div class="row">
+                                        <div class="col-sm-6"><i class="fas fa-shipping-fast"></i> Livré le : ' . $delivery[$i] . '</div>
+                                        <div class="col-sm-6"><i class="fas fa-map-marker"></i> Site : ' . $city[$i] . '</div>
+                                    </div>    
+                                    <div class="row">
+                                        <div class="col-sm-6"><i class="fas fa-history"></i> Commande passé le : ' . $dateCookie[$i] . '</div>
+                                        <div class="col-sm-6"><i class="fas fa-tags"></i> Prix payé : 8.99€</div>
+                                    </div>      
+                                </div>
+                            </div>';
+                        }
                     }
                     ?>
                 </div>

@@ -29,7 +29,7 @@ function validerPanier(){
         document.cookie = 'quantity=' + getCookieVal('quantity') + '  ' + quantity[i].value + '  ';
         document.cookie = 'city=' + getCookieVal('city') + '  ' + getSelectValue(i) + '  ';
         let date = new Date();
-        document.cookie = 'buyDates=' + date.toLocaleString();
+        document.cookie = 'buyDates=' + getCookieVal('buyDates') + '  ' +  date.toLocaleString();
         if(getSelectValue(i) == undefined || getSelectValue(i) == ""){
             document.body.appendChild(error);
             select[i].style.border = "2px solid red";

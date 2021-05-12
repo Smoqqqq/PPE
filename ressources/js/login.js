@@ -37,7 +37,7 @@ function personnalPage() {
             <div class="col-sm-6">      
                 <p>Mode Sombre : <a id="dmToggle">` + dmValue + `</a></p>
                 <p><a href="historique"><i class="fas fa-external-link-alt"></i> Historique : </a><e id="histo"> ` + historyState +	` </e></p>
-                <p><a href="panier"><i class="fas fa-external-link-alt"></i> Mes achats </a><e id="histo"></e></p>
+                <p><a href="panier"><i class="fas fa-external-link-alt"></i> Mon panier </a></p>
             </div>
         </div>
         <a onclick="hideInfos()" class="closeInfos"><i class="far fa-times-circle"></i></a>

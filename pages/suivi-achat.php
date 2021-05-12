@@ -87,11 +87,18 @@
     }
 
     function clearCookies() {
-        document.cookie = "newpanier=" + getCookieVal("panier");
-        document.cookie = "newbuyDates=" + getCookieVal("buyDates");
-        document.cookie = "newquantity=" + getCookieVal("quantity");
-        document.cookie = "newcity=" + getCookieVal("city");
-        document.cookie = "deliveryDate=" + '<?php echo date("d/m/Y"); ?>';
+        document.cookie = "newpanier=";
+            document.cookie = "newbuyDates=";
+        document.cookie = "newquantity=";
+        document.cookie = "newcity=";
+        document.cookie = "deliveryDate=";
+
+        let articles = document.getElementsByClassName('suiviAchat');
+        document.cookie = "newpanier=" + getCookieVal('newpanier') + getCookieVal("panier");
+        document.cookie = "newbuyDates=" + getCookieVal('newbuyDates') + getCookieVal("buyDates");
+        document.cookie = "newquantity=" + getCookieVal('newquantity') + getCookieVal("quantity");
+        document.cookie = "newcity=" + getCookieVal('newcity') + getCookieVal("city");
+        for (let i = 0; i < articles.length; i++) document.cookie = "deliveryDate=" + getCookieVal('deliveryDate') + '  ' + '<?php echo date("d/m/Y"); ?>';
 
         document.cookie = "panier=;";
         document.cookie = "buyDates=;";

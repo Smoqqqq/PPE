@@ -147,7 +147,7 @@ if(window.location.href.includes("historique")){
                     <div class="col-9"><p class="historyTitle">` + title[index] + `</p></div>
                     <div class="col-3"><input type="checkbox" class="historySelect" style="margin: auto"></div>
                 </div>
-                <p>` + desc[index].slice(0, 320) + `</p>
+                <p>` + desc[index].slice(0, 620) + `</p>
                     </div>
                 </div>
             </div>`;
