@@ -1,4 +1,4 @@
-let progressDefault = ' 1 ';
+let progressDefault = ' 2 ';
 let contenuPanier = getCookieVal('panier').split('  ');
 let quantity = document.getElementsByClassName('quantity');
 let select = document.getElementsByClassName('select');
