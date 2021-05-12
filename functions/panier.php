@@ -16,7 +16,16 @@ if (isset($_COOKIE['buyDates'])) {
     $dateCookie = explode('  ', $_COOKIE['buyDates']);
     for ($i = 0; $i < count($dateCookie); $i++) {
         $cookie = explode(':', explode(' ', $dateCookie[$i])[1])[0];
-        if ($cookie - (date('H') + 2) < 0) {
+        if ($cookie - (date('H') + 2) < -1) {
+            $progress[$i] = $progress[$i] + 2;
+            echo "<script>
+                window.onload = () => {
+                    document.getElementsByClassName('bar')[$i].setAttribute('data-barprogress', '$progress[$i]');
+                    progressBarResize();
+                    document.getElementsByClassName('suiviAchat')[$i].classList.add('received');
+                }
+            </script>";
+        } else if ($cookie - (date('H') + 2) < 0) {
             $progress[$i] = $progress[$i] + 1;
             echo "<script>
                 window.onload = () => {
@@ -29,7 +38,8 @@ if (isset($_COOKIE['buyDates'])) {
 }
 
 for ($i = 0; $i < count($panier); $i++) {
-    $timeLeft[$i] = 4 - $progress[$i];
+    $timeLeft[$i] = 4 - $progress[$i] . " Jours";
+    if($timeLeft[$i] == 0) $timeLeft[$i] = "<b>Commande livrée !</b>"; 
     $style = (($i % 2) != 0) ? 'style="background: rgba(0, 0, 0, 0.5)"' : "";
     echo
     '<div class="row suiviAchat"' . $style . '>
@@ -39,11 +49,11 @@ for ($i = 0; $i < count($panier); $i++) {
                     <div class="col-sm-4"><i class="fas fa-layer-group"></i> Quantité : ' . $quantity[$i] . '</div>
                 </div>   
                 <div class="row">
-                    <div class="col-sm-8"><i class="fas fa-shipping-fast"></i> Arrivée prévue dans : ' . $timeLeft[$i] . ' Jours</div>
+                    <div class="col-sm-8"><i class="fas fa-shipping-fast"></i> Arrivée prévue dans : ' . $timeLeft[$i] . '</div>
                     <div class="col-sm-4"><i class="fas fa-map-marker"></i> Site : ' . $city[$i] . '</div>
                 </div>    
                 <div class="row">
-                    <div class="col-sm-8"><i class="fas fa-history"></i> Commande passé le : '.$dateCookie[$i].'</div>
+                    <div class="col-sm-8"><i class="fas fa-history"></i> Commande passé le : ' . $dateCookie[$i] . '</div>
                     <div class="col-sm-4"><i class="fas fa-tags"></i> Prix payé : 8.99€</div>
                 </div>      
             </div>
@@ -57,7 +67,6 @@ for ($i = 0; $i < count($panier); $i++) {
                     </div>
                 </div>              
             </div>
-            <img src="" class="bookImg" style="display: none;">
         </div>';
     /* $query_register = "INSERT INTO `achats` (`ID`, `title`, `progress`, `quantity`) VALUES (NULL, 'addslashes($panier[$i])', 'addslashes($progress[$i])', 'addslashes($quantity[$i])')";
     mysqli_query($conn, $query_register); */

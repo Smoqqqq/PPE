@@ -3,9 +3,9 @@ consulter le catalogue                                                          
 historique de la navigation                                                     // FAIT
 faire des recherche de livre en particulier                                     // FAIT
 base de donnée a faire en SLAM !                                                // FAIT
-Suivi panier avec état du livre                                                 // à moitié fait, scripts bancal
+Suivi panier avec état du livre                                                 // FAIT => début palier 2, 1H après palier 3
 Prise en compte des 3 sites                                                     // FAIT
-compte utilisateur                                                              // fait rapidement, à polish
+compte utilisateur                                                              // fait
 
 Hébergement                                                                     // FAIL
 

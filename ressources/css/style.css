@@ -444,10 +444,39 @@ a.button:hover{
 .suiviAchat{
     padding: 20px 10px 20px 10px;
     background: var(--bggray);
+    position: relative;
 }
 
 .suiviAchat:hover{
     filter: brightness(0.85);
+}
+
+.suiviAchat.received{
+    background: rgb(87 224 87 / 42%);
+}
+
+.suiviAchat.received:after{
+    font-family: "Font Awesome 5 Free";
+    content: "\f14a";
+    position: absolute;
+    right: 10px;
+    top: 2px;
+    font-size: 30px;
+    color: white;
+}
+
+.suiviAchat.received:before{
+    position: absolute;
+    content: "Commande reçue !";
+    text-decoration: underline;
+    right: 50px;
+    top: 2px;
+    font-size: 25px;
+    color: white;
+}
+
+.suiviAchat.received .bar{
+    animation: none;
 }
 
 .orange{
