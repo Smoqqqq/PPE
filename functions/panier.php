@@ -1,3 +1,13 @@
+<script>
+    function receive(i) {
+        window.addEventListener('DOMContentLoaded',  () => {
+            document.getElementsByClassName('bar')[i].setAttribute('data-barprogress', '$progress[$i]');
+            document.getElementsByClassName('suiviAchat')[i].classList.add('received');
+            progressBarResize();
+        })
+    }
+</script>
+
 <?php
 
 $panier = explode('  ', htmlspecialchars($_COOKIE['panier']));
@@ -18,13 +28,8 @@ if (isset($_COOKIE['buyDates'])) {
         $cookie = explode(':', explode(' ', $dateCookie[$i])[1])[0];
         if ($cookie - (date('H') + 2) < -1) {
             $progress[$i] = $progress[$i] + 2;
-            echo "<script>
-                window.onload = () => {
-                    document.getElementsByClassName('bar')[$i].setAttribute('data-barprogress', '$progress[$i]');
-                    progressBarResize();
-                    document.getElementsByClassName('suiviAchat')[$i].classList.add('received');
-                }
-            </script>";
+?> <script>receive(<?= $i ?>);</script>
+<?php
         } else if ($cookie - (date('H') + 2) < 0) {
             $progress[$i] = $progress[$i] + 1;
             echo "<script>
@@ -38,8 +43,9 @@ if (isset($_COOKIE['buyDates'])) {
 }
 
 for ($i = 0; $i < count($panier); $i++) {
+    $dateCookie = explode('  ', $_COOKIE['buyDates']);
     $timeLeft[$i] = 4 - $progress[$i] . " Jours";
-    if($timeLeft[$i] == 0) $timeLeft[$i] = "<b>Commande livrée !</b>"; 
+    if ($timeLeft[$i] == 0) $timeLeft[$i] = "<b>Commande livrée !</b>";
     $style = (($i % 2) != 0) ? 'style="background: rgba(0, 0, 0, 0.5)"' : "";
     echo
     '<div class="row suiviAchat"' . $style . '>

@@ -31,7 +31,7 @@ if (isset($_COOKIE['progress'])) {
 
     </div><br><br>
 
-    <p class="text-center">Vous pouvez aussi consulter l'historique de vos achats <a href="historique">ICI&nbsp;<i class="fas fa-external-link-alt"></i></a></p>
+    <p class="text-center">Vous pouvez aussi consulter l'historique de vos achats <a href="historique#purchases">ICI&nbsp;<i class="fas fa-external-link-alt"></i></a></p>
 
     <div id="containerValider">
 

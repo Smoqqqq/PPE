@@ -78,17 +78,20 @@
     })
 </script>
 
-<div class="text-center"><a href="suite-achat" class="valider" id="confirm" onclick="clearCookies()">j'ai réceptionné le colis !</a></div>
+<div class="text-center"><a class="valider disabled" id="confirm" onclick="clearCookies()">j'ai réceptionné le colis !</a></div>
 
 <script>
-    let confirm = document.getElementById('confirm');
-    if (document.getElementsByClassName('received').length > 0) {
-        confirm.style.display = "block";
-    }
+    window.addEventListener("DOMContentLoaded", () => {
+        let confirm = document.getElementById('confirm');
+        if (document.getElementsByClassName('received').length > 0) {
+            confirm.classList.remove('disabled');
+            confirm.setAttribute('href', 'suite-achat');
+        }
+    })
 
     function clearCookies() {
         document.cookie = "newpanier=";
-            document.cookie = "newbuyDates=";
+        document.cookie = "newbuyDates=";
         document.cookie = "newquantity=";
         document.cookie = "newcity=";
         document.cookie = "deliveryDate=";
